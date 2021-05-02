@@ -1,0 +1,3 @@
+[submodule "hydejack"]
+	path = hydejack
+	url = https://github.com/21800430/team-mini_project.git
