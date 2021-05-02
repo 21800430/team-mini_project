@@ -1,14 +1,22 @@
 typedef struct {
-    char name[20]; //Á¦¸ñ
-    int cost; // °¡°İ
-    char jenre[20]; //Àå¸£
-    char writer[20]; //ÀúÀÚ
-    char publisher[20]; //ÃâÆÇ»ç
-    int many; //Á¦°í·®
-    int star; //º°Á¡
+    char name[20]; //ì œëª©
+    int cost; // ê°€ê²©
+    char jenre[20]; //ì¥ë¥´
+    char writer[20]; //ì €ì
+    char publisher[20]; //ì¶œíŒì‚¬
+    int many; //ì¬ê³ ëŸ‰
+    int star; //ë³„ì 
 }Book;
 
-//Ã¥À» µî·ÏÇÏ´Â ÇÔ¼ö
+//ì±…ì„ ë“±ë¡í•˜ëŠ” í•¨ìˆ˜
 int addBook( Book *b );
-//µî·ÏµÈ Ã¥À» ¾÷µ¥ÀÌÆ®ÇÏ´Â ÇÔ¼ö
+//ë“±ë¡ëœ ì±…ì„ ì—…ë°ì´íŠ¸í•˜ëŠ” í•¨ìˆ˜
 int updateBook( Book *b );
+// ì›í•˜ëŠ” ì±…ì˜ ì •ë³´ë¥¼ ë¶ˆëŸ¬ì˜¤ëŠ” í•¨ìˆ˜
+void readBook(Book *b);
+// ì±…ì˜ ëª©ë¡ì„ ë‚˜ì—´í•˜ëŠ” í•¨ìˆ˜
+int booklist(Book *b[], int index, int n);
+// ì±…ì˜ ë²ˆí˜¸ë¥¼ ê³ ë¥´ëŠ” í•¨ìˆ˜
+int selectBookNum(Book *b[], int index);
+// ì±…ì˜ ì •ë³´ë¥¼ ì‚­ì œí•˜ëŠ” í•¨ìˆ˜
+int deleteBook(Book *b[], int index);
