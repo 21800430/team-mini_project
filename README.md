@@ -14,6 +14,6 @@ Team-mini_project
 
 ### 참여인원 및 역할
 + 양수민(21800430) : 코딩, [Readme](https://github.com/21800430/team-mini_project.git) 작성
-+ 전예빈(21800645) : 코딩, [위키](https://github.com/21800430/team-mini_project.wiki.git) 페이지 작성
++ 전예빈(21800645) : 코딩, [위키](https://github.com/21800430/team-mini_project/wiki) 페이지 작성
 ***
-자세한 내용은 [위키](https://github.com/21800430/team-mini_project.wiki.git)를 참조하세요.
+자세한 내용은 [위키](https://github.com/21800430/team-mini_project/wiki)를 참조하세요.
