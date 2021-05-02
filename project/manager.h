@@ -2,17 +2,21 @@
 #include "product.h"
 #endif
 
-//Á¦¸ñ °Ë»ö
+//ì œëª© ê²€ìƒ‰
 void searchName( Book *b, int count );
-//°¡°İ °Ë»ö
+//ê°€ê²© ê²€ìƒ‰
 void searchCost( Book *b, int count );
-//Àå¸£ °Ë»ö
+//ì¥ë¥´ ê²€ìƒ‰
 void searchGenre( Book *b, int count );
-//ÀúÀÚ °Ë»ö
+//ì €ì ê²€ìƒ‰
 void searchWriter( Book *b, int count );
-//ÃâÆÇ»ç °Ë»ö
+//ì¶œíŒì‚¬ ê²€ìƒ‰
 void searchPublisher( Book *b, int count );
-//º°Á¡ °Ë»ö
+//ë³„ì  ê²€ìƒ‰
 void searchStar( Book *b, int count );
-//Á¦°í·® °Ë»ö
+//ì¬ê³ ëŸ‰ ê²€ìƒ‰
 void searchName( Book *b, int count );
+// íŒŒì¼ ë¶ˆëŸ¬ì˜¤ê¸°
+int loadFile(Book *b[]);
+// íŒŒì¼ ì €ì¥í•˜ê¸°
+int saveFile(Book *b[], int index);
