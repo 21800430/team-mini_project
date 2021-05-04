@@ -11,7 +11,7 @@ typedef struct {
 //책을 등록하는 함수
 int addBook( Book *b );
 //등록된 책을 업데이트하는 함수
-int updateBook( Book *b );
+int updateBook( Book *b[], int index );
 // 원하는 책의 정보를 불러오는 함수
 void readBook(Book *b);
 // 책의 목록을 나열하는 함수
