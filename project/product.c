@@ -40,3 +40,7 @@ int updateBook( Book *b[], int index ){
     printf("=> 수정되었습니다\n");
     return 1;
 }
+
+void readBook(Book *b){
+    
+}

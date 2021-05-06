@@ -7,6 +7,7 @@ typedef struct {
     int many; //재고량
     int star; //별점
 }Book;
+#define PRODUCT_H
 
 //책을 등록하는 함수
 int addBook( Book *b );
