@@ -2,9 +2,9 @@
 #include<string.h>
 #include<stdio.h>
 #include "manager.h"
-//Á¦¸ñ °Ë»ö
+//ì œëª© ê²€ìƒ‰
 void searchName( Book *b[], int count ){
-    printf("°Ë»öÇÒ Á¦¸ñ: ");
+    printf("ê²€ìƒ‰í•  ì œëª©: ");
     char title[20];
     int fail = 1;
     scanf("%[^\n]s",title);
@@ -19,11 +19,11 @@ void searchName( Book *b[], int count ){
             else fail++;
         }
     }
-    if(fail == count) printf("ÀÏÄ¡ÇÏ´Â °á°ú°¡ ¾ø½À´Ï´Ù.\n");
+    if(fail == count) printf("ì¼ì¹˜í•˜ëŠ” ê²°ê³¼ê°€ ì—†ìŠµë‹ˆë‹¤.\n");
 }
-//°¡°İ °Ë»ö
+//ê°€ê²© ê²€ìƒ‰
 void searchCost( Book *b[], int count ){
-    printf("°Ë»öÇÒ °¡°İ(°Ë»ö °¡°İ ÀÌÇÏ Ã¥ Ãâ·Â): ");
+    printf("ê²€ìƒ‰í•  ê°€ê²©(ê²€ìƒ‰ ê°€ê²© ì´í•˜ ì±… ì¶œë ¥): ");
     int fail = 1, cost;
     scanf("%d",&cost);
     getchar();
@@ -36,12 +36,12 @@ void searchCost( Book *b[], int count ){
             else fail++;
         }
     }
-    if(fail == count) printf("ÀÏÄ¡ÇÏ´Â °á°ú°¡ ¾ø½À´Ï´Ù.\n");
+    if(fail == count) printf("ì¼ì¹˜í•˜ëŠ” ê²°ê³¼ê°€ ì—†ìŠµë‹ˆë‹¤.\n");
 }
 
-//Àå¸£ °Ë»ö
+//ì¥ë¥´ ê²€ìƒ‰
 void searchGenre( Book *b[], int count ){
-    printf("°Ë»öÇÒ Àå¸£: ");
+    printf("ê²€ìƒ‰í•  ì¥ë¥´: ");
     char genre[20];
     int fail=1;
     scanf("%[^\n]s",genre);
@@ -56,5 +56,44 @@ void searchGenre( Book *b[], int count ){
             else fail++;
         }
     }
-    if(fail == count) printf("ÀÏÄ¡ÇÏ´Â °á°ú°¡ ¾ø½À´Ï´Ù.\n");
+    if(fail == count) printf("ì¼ì¹˜í•˜ëŠ” ê²°ê³¼ê°€ ì—†ìŠµë‹ˆë‹¤.\n");
+}
+
+// íŒŒì¼ ë¶ˆëŸ¬ì˜¤ê¸°
+int loadFile(Book *b[]) {
+    int i, num;
+    FILE *fs;
+    
+    fs = fopen("booklist.txt", "rt");
+    for(i = 1; i <= 100; i++) {
+        if(feof(fs)) break;
+        b[i] = (Book *)malloc(sizeof(Book));
+        b[i]->no = i;
+        
+        fscanf(fs, "%s", b[i]->name);
+        fscanf(fs, "%s", b[i]->writer);
+        fscanf(fs, "%s", b[i]->publisher);
+        fscanf(fs, "%s", b[i]->genre);
+        fscanf(fs, "%d", &b[i]->cost);
+        fscanf(fs, "%d", &b[i]->many);
+        fscanf(fs, "%f", &b[i]->star);
+    }
+    fclose(fs);
+    
+    return i-1;
+}
+
+// íŒŒì¼ ì €ì¥í•˜ê¸°
+int saveFile(Book *b[], int index) {
+    FILS *fs;
+    fs = fopen("booklist.txt", "wt");
+    
+    int i;
+    for(i = 1; i <= index; i++) {
+        if(b[i] == NULL) continue;
+        fprintf(fs, "%s %s %s %s %d %d %.1f", b[i]->name, b[i]->writer, b[i]->publisher, b[i]->genre, b[i]->cost, b[i]->many, b[i]->star);
+        if(i < index) fprintf(fs, "\n");
+    }
+    fclose(fs);
+    printf("ì €ì¥ì™„ë£Œ!\n");
 }
