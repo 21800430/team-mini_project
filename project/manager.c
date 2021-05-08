@@ -73,7 +73,7 @@ int loadFile(Book *b[]) {
         fscanf(fs, "%s", b[i]->name);
         fscanf(fs, "%s", b[i]->writer);
         fscanf(fs, "%s", b[i]->publisher);
-        fscanf(fs, "%s", b[i]->genre);
+        fscanf(fs, "%s", b[i]->jenre);
         fscanf(fs, "%d", &b[i]->cost);
         fscanf(fs, "%d", &b[i]->many);
         fscanf(fs, "%f", &b[i]->star);
@@ -85,13 +85,13 @@ int loadFile(Book *b[]) {
 
 // 파일 저장하기
 int saveFile(Book *b[], int index) {
-    FILS *fs;
+    FILE *fs;
     fs = fopen("booklist.txt", "wt");
     
     int i;
     for(i = 1; i <= index; i++) {
         if(b[i] == NULL) continue;
-        fprintf(fs, "%s %s %s %s %d %d %.1f", b[i]->name, b[i]->writer, b[i]->publisher, b[i]->genre, b[i]->cost, b[i]->many, b[i]->star);
+        fprintf(fs, "%s %s %s %s %d %d %.1f", b[i]->name, b[i]->writer, b[i]->publisher, b[i]->jenre, b[i]->cost, b[i]->many, b[i]->star);
         if(i < index) fprintf(fs, "\n");
     }
     fclose(fs);

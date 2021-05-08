@@ -21,39 +21,59 @@ int selectMenu() {
 
 //책을 등록하는 함수
 int addBook( Book *b ){
+    printf("책 번호는?: ");
+    scanf("%d",&b->no);
+    getchar();
     printf("책 제목은?: ");
     scanf("%[^\n]s",b->name);
+    getchar();
     printf("책 저자는?: ");
     scanf("%[^\n]s",b->writer);
+    getchar();
     printf("책 출판사는?: ");
     scanf("%[^\n]s",b->publisher);
+    getchar();
     printf("책 장르는?: ");
     scanf("%[^\n]s",b->jenre);
+    getchar();
     printf("책 가격은??: ");
     scanf("%[^\n]s",b->cost);
+    getchar();
     printf("책 재고량은?: ");
     scanf("%d",b->many);
+    getchar();
     printf("책 별점는?: ");
     scanf("%[^\n]s",b->star);
+    getchar();
     printf("=> 등록되었습니다\n");
     return 1;
 }
 //등록된 책을 업데이트하는 함수
-int updateBook( Book *b[], int index ){
+int updateBook( Book *b){
+    printf("책 번호는?: ");
+    scanf("%d",&b->no);
+    getchar();
     printf("책 제목은?: ");
-    scanf("%[^\n]s",b[index]->name);
+    scanf("%[^\n]s",b->name);
+    getchar();
     printf("책 저자는?: ");
-    scanf("%[^\n]s",b[index]->writer);
+    scanf("%[^\n]s",b->writer);
+    getchar();
     printf("책 출판사는?: ");
-    scanf("%[^\n]s",b[index]->publisher);
+    scanf("%[^\n]s",b->publisher);
+    getchar();
     printf("책 장르는?: ");
-    scanf("%[^\n]s",b[index]->jenre);
+    scanf("%[^\n]s",b->jenre);
+    getchar();
     printf("책 가격은??: ");
-    scanf("%[^\n]s",b[index]->cost);
+    scanf("%[^\n]s",b->cost);
+    getchar();
     printf("책 재고량은?: ");
-    scanf("%d",b[index]->many);
+    scanf("%d",b->many);
+    getchar();
     printf("책 별점는?: ");
-    scanf("%[^\n]s",b[index]->star);
+    scanf("%[^\n]s",b->star);
+    getchar();
     printf("=> 수정되었습니다\n");
     return 1;
 }
@@ -87,7 +107,7 @@ int selectBookNum(Book *b[], int index) {
     int num;
     
     printf("\n원하는 책의 번호를 입력해주세요. (취소 : 0)");
-    scanf("%d", %num);
+    scanf("%d", &num);
     
     if(b[num] == NULL) {
         printf("번호를 잘못 입력하셨습니다.\n");
