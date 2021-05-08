@@ -16,7 +16,7 @@ void searchPublisher( Book *b[], int count );
 //별점 검색
 void searchStar( Book *b[], int count );
 //재고량 검색
-void searchName( Book *b[], int count );
+void searchMany( Book *b[], int count );
 // 파일 불러오기
 int loadFile(Book *b[]);
 // 파일 저장하기

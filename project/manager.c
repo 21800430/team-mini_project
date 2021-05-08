@@ -13,7 +13,6 @@ void searchName( Book *b[], int count ){
     for( int i = 0; i < count; i++) {
         if(b[i] != NULL){
             if(strstr(b[i]->name,title)){
-                printf("%d",i+1);
                 readBook(*b[i]);
             }
             else fail++;
@@ -30,7 +29,6 @@ void searchCost( Book *b[], int count ){
     for( int i = 0 ; i < count ; i++){
         if(b[i]!=NULL){
             if(b[i]->cost == cost){
-                printf("%d", i+1);
                 readBook(*b[i]);
             }
             else fail++;
@@ -50,7 +48,76 @@ void searchGenre( Book *b[], int count ){
     for( int i = 0; i < count; i++) {
         if(b[i] != NULL){
             if(strstr(b[i]->name,genre)){
-                printf("%d",i+1);
+                readBook(*b[i]);
+            }
+            else fail++;
+        }
+    }
+    if(fail == count) printf("일치하는 결과가 없습니다.\n");
+}
+
+//저자 검색
+void searchWriter( Book *b[], int count ){
+    printf("검색할 저자: ");
+    char writer[20];
+    int fail=1;
+    scanf("%[^\n]s",writer);
+    getchar();
+    printf("\n------------------\n");
+    for( int i = 0; i < count; i++) {
+        if(b[i] != NULL){
+            if(strstr(b[i]->writer,writer)){
+                readBook(*b[i]);
+            }
+            else fail++;
+        }
+    }
+    if(fail == count) printf("일치하는 결과가 없습니다.\n");
+}
+//출판사 검색
+void searchPublisher( Book *b[], int count ){	
+    printf("검색할 출판사: ");
+    char publisher[20];
+    int fail=1;
+    scanf("%[^\n]s",publisher);
+    getchar();
+    printf("\n------------------\n");
+    for( int i = 0; i < count; i++) {
+        if(b[i] != NULL){
+            if(strstr(b[i]->publisher,publisher)){
+                readBook(*b[i]);
+            }
+            else fail++;
+        }
+    }
+    if(fail == count) printf("일치하는 결과가 없습니다.\n");
+}
+//별점 검색
+void searchStar( Book *b[], int count ){	
+    printf("검색할 별점: ");
+    int fail = 1;
+    float star = 0;
+    scanf("%f",&star);
+    getchar();
+    for( int i = 0 ; i < count ; i++){
+        if(b[i]!=NULL){
+            if(b[i]->star == star){
+                readBook(*b[i]);
+            }
+            else fail++;
+        }
+    }
+    if(fail == count) printf("일치하는 결과가 없습니다.\n");
+}
+//재고량 검색
+void searchMany( Book *b[], int count ){
+    printf("검색할 재고량: ");
+    int fail = 1, many;
+    scanf("%d",&many);
+    getchar();
+    for( int i = 0 ; i < count ; i++){
+        if(b[i]!=NULL){
+            if(b[i]->many == many){
                 readBook(*b[i]);
             }
             else fail++;
@@ -60,6 +127,7 @@ void searchGenre( Book *b[], int count ){
 }
 
 // 파일 불러오기
+
 int loadFile(Book *b[]) {
     int i, num;
     FILE *fs;
