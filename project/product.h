@@ -6,7 +6,7 @@ typedef struct {
     char writer[20]; //저자
     char publisher[20]; //출판사
     int many; //재고량
-    int star; //별점
+    float star; //별점
 }Book;
 #define PRODUCT_H
 
@@ -15,10 +15,12 @@ int addBook( Book *b );
 //등록된 책을 업데이트하는 함수
 int updateBook( Book *b);
 // 원하는 책의 정보를 불러오는 함수
-void readBook(Book *b);
+void readBook(Book b);
 // 책의 목록을 나열하는 함수
 int booklist(Book *b[], int index, int n);
 // 책의 번호를 고르는 함수
 int selectBookNum(Book *b[], int index);
 // 책의 정보를 삭제하는 함수
 int deleteBook(Book *b);
+//메뉴를 보유주는 함수
+int selectMenu();

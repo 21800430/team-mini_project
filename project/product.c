@@ -37,13 +37,13 @@ int addBook( Book *b ){
     scanf("%[^\n]s",b->jenre);
     getchar();
     printf("책 가격은??: ");
-    scanf("%[^\n]s",b->cost);
+    scanf("%d",&b->cost);
     getchar();
     printf("책 재고량은?: ");
-    scanf("%d",b->many);
+    scanf("%d",&b->many);
     getchar();
     printf("책 별점는?: ");
-    scanf("%[^\n]s",b->star);
+    scanf("%f",&b->star);
     getchar();
     printf("=> 등록되었습니다\n");
     return 1;
@@ -66,13 +66,13 @@ int updateBook( Book *b){
     scanf("%[^\n]s",b->jenre);
     getchar();
     printf("책 가격은??: ");
-    scanf("%[^\n]s",b->cost);
+    scanf("%d",&b->cost);
     getchar();
     printf("책 재고량은?: ");
-    scanf("%d",b->many);
+    scanf("%d",&b->many);
     getchar();
     printf("책 별점는?: ");
-    scanf("%[^\n]s",b->star);
+    scanf("%f",&b->star);
     getchar();
     printf("=> 수정되었습니다\n");
     return 1;
@@ -114,4 +114,7 @@ int selectBookNum(Book *b[], int index) {
     }
     
     return num;
+}
+
+int deleteBook(Book *B){
 }

@@ -33,7 +33,7 @@ int main(void) {
             index++;
             bp[index] = (Book *)malloc(sizeof(Book));
             count++;
-            addBook(bp[index], index);
+            addBook(bp[index]);
         } else if(menu == 3) {
             no = selectBookNum(bp, index);
             if(no > 0) {

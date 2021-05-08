@@ -14,7 +14,7 @@ void searchName( Book *b[], int count ){
         if(b[i] != NULL){
             if(strstr(b[i]->name,title)){
                 printf("%d",i+1);
-                readBook(b[i]);
+                readBook(*b[i]);
             }
             else fail++;
         }
@@ -31,7 +31,7 @@ void searchCost( Book *b[], int count ){
         if(b[i]!=NULL){
             if(b[i]->cost == cost){
                 printf("%d", i+1);
-                readBook(b[i]);
+                readBook(*b[i]);
             }
             else fail++;
         }
@@ -51,7 +51,7 @@ void searchGenre( Book *b[], int count ){
         if(b[i] != NULL){
             if(strstr(b[i]->name,genre)){
                 printf("%d",i+1);
-                readBook(b[i]);
+                readBook(*b[i]);
             }
             else fail++;
         }
