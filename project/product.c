@@ -90,7 +90,7 @@ int booklist(Book *b[], int index, int n) {
     int i;
     
     if(n == -1) {
-        for(i = 1; i <= index; i++) {
+        for(i = 0; i < index; i++) {
             if(b[i] == NULL) continue;
             readBook(*b[i]);
         }

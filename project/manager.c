@@ -28,7 +28,7 @@ void searchCost( Book *b[], int count ){
     getchar();
     for( int i = 0 ; i < count ; i++){
         if(b[i]!=NULL){
-            if(b[i]->cost == cost){
+            if(b[i]->cost <= cost){
                 readBook(*b[i]);
             }
             else fail++;
@@ -94,14 +94,14 @@ void searchPublisher( Book *b[], int count ){
 }
 //별점 검색
 void searchStar( Book *b[], int count ){	
-    printf("검색할 별점: ");
+    printf("검색할 별점(몇 점 이상): ");
     int fail = 0;
     float star = 0;
     scanf("%f",&star);
     getchar();
     for( int i = 0 ; i < count ; i++){
         if(b[i]!=NULL){
-            if(b[i]->star == star){
+            if(b[i]->star >= star){
                 readBook(*b[i]);
             }
             else fail++;
@@ -111,13 +111,13 @@ void searchStar( Book *b[], int count ){
 }
 //재고량 검색
 void searchMany( Book *b[], int count ){
-    printf("검색할 재고량: ");
+    printf("검색할 재고량(몇 개 이상): ");
     int fail = 0, many;
     scanf("%d",&many);
     getchar();
     for( int i = 0 ; i < count ; i++){
         if(b[i]!=NULL){
-            if(b[i]->many == many){
+            if(b[i]->many >= many){
                 readBook(*b[i]);
             }
             else fail++;
@@ -133,7 +133,7 @@ int loadFile(Book *b[]) {
     FILE *fs;
     
     fs = fopen("booklist.txt", "rt");
-    for(i = 1; i <= 100; i++) {
+    for(i = 0; i < 100; i++) {
         if(feof(fs)) break;
         b[i] = (Book *)malloc(sizeof(Book));
         b[i]->no = i;
@@ -157,7 +157,7 @@ int saveFile(Book *b[], int index) {
     fs = fopen("booklist.txt", "wt");
     
     int i;
-    for(i = 1; i <= index; i++) {
+    for(i = 0; i < index; i++) {
         if(b[i] == NULL) continue;
         fprintf(fs, "%s %s %s %s %d %d %.1f", b[i]->name, b[i]->writer, b[i]->publisher, b[i]->genre, b[i]->cost, b[i]->many, b[i]->star);
         if(i < index) fprintf(fs, "\n");

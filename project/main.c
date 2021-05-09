@@ -30,10 +30,9 @@ int main(void) {
                 printf("등록된 책이 없습니다.\n");
             }
         } else if(menu == 2) {
-            index++;
             bp[index] = (Book *)malloc(sizeof(Book));
             count++;
-            addBook(bp[index]);
+            addBook(bp[index++]);
         } else if(menu == 3) {
             no = selectBookNum(bp, index);
             if(no > 0) {
