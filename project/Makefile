@@ -7,4 +7,4 @@ $(TARGET) : $(OBJECTS)
 	$(CC) $^ -I./ -o $@
 
 clean:
-	rm *.o *.exe
+	rm *.o bookshop

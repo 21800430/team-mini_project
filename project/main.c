@@ -56,6 +56,7 @@ int main(void) {
             printf("7. 재고량\n");
             printf("=> 검색할 종류를 선택해주세요. ");
             scanf("%d", &s);
+	    getchar();
             
             if(s == 1) {
                 searchName(bp, index);
