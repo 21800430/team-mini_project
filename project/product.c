@@ -1,7 +1,7 @@
 //CRUD 구현
 #include<stdio.h>
 #include "product.h"
-
+#include<stdlib.h>
 // 메뉴를 띄우는 함수
 int selectMenu() {
     int menu;
@@ -115,7 +115,7 @@ int selectBookNum(Book *b[], int index) {
 }
 
 // 원하는 책의 정보를 삭제하는 함수
-int deleteBook(Book *b, int index){
+int deleteBook(Book *b[], int index){
     int no = selectBookNum(b, index);
     int delOk;
     if(b[no] != NULL) {
@@ -124,7 +124,7 @@ int deleteBook(Book *b, int index){
         if(delOk == 1) {
             free(b[no]);
             b[no] = NULL;
-            count--;
+            delOk--;
             printf("=> 삭제되었습니다.\n");
         } else {
             printf("=> 취소되었습니다.\n");

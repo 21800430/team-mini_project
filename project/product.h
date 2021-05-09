@@ -21,6 +21,6 @@ int booklist(Book *b[], int index, int n);
 // 책의 번호를 고르는 함수
 int selectBookNum(Book *b[], int index);
 // 책의 정보를 삭제하는 함수
-int deleteBook(Book *b, int index);
+int deleteBook(Book *b[], int index);
 //메뉴를 보유주는 함수
 int selectMenu();
