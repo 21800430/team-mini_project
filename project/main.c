@@ -53,17 +53,29 @@ int main(void) {
         } else if(menu == 6) {
             int s;
             printf("1. 이름\n");
-            printf("2. 가격\n");
-            printf("3. 장르\n");
+            printf("2. 저자\n");
+            printf("3. 출판사\n");
+            printf("4. 가격\n");
+            printf("5. 장르\n");
+            printf("6. 별점\n");
+            printf("7. 재고량\n");
             printf("=> 검색할 종류를 선택해주세요. ");
             scanf("%d", &s);
             
             if(s == 1) {
                 searchName(bp, index);
             } else if(s == 2) {
-                searchCost(bp, index);
+                searchWriter(bp, index);
             } else if(s == 3) {
+                searchPublisher(bp, index);
+            } else if(s == 4) {
+                searchCost(bp, index);
+            } else if(s == 5) {
                 searchGenre(bp, index);
+            } else if(s == 6) {
+                searchStar(bp, index);
+            } else if(s == 7) {
+                searchMany(bp, index);
             } else {
                 printf("메뉴를 잘못 선택하셨습니다.\n");
             }
