@@ -7,7 +7,7 @@
 
 int main(void) {
     Book *bp[100];
-    int count = 0, index = 0, i = 0;
+    int count = 1, index = 1, i = 0;
     int menu, no;
     int file = 0;
     
@@ -32,6 +32,7 @@ int main(void) {
         } else if(menu == 2) {
             bp[index] = (Book *)malloc(sizeof(Book));
             count++;
+	    bp[index]->no = index;
             addBook(bp[index++]);
         } else if(menu == 3) {
             no = selectBookNum(bp, index);

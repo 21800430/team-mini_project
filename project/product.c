@@ -15,15 +15,12 @@ int selectMenu() {
     printf("0. 종료\n");
     printf("=> 원하시는 메뉴를 선택해주세요. ");
     scanf("%d", &menu);
-    
+    getchar(); 
     return menu;
 }
 
 //책을 등록하는 함수
 int addBook( Book *b ){
-    printf("책 번호는?: ");
-    scanf("%d",&b->no);
-    getchar();
     printf("책 제목은?: ");
     scanf("%[^\n]s",b->name);
     getchar();
@@ -50,9 +47,6 @@ int addBook( Book *b ){
 }
 //등록된 책을 업데이트하는 함수
 int updateBook( Book *b){
-    printf("책 번호는?: ");
-    scanf("%d",&b->no);
-    getchar();
     printf("책 제목은?: ");
     scanf("%[^\n]s",b->name);
     getchar();
@@ -90,7 +84,7 @@ int booklist(Book *b[], int index, int n) {
     int i;
     
     if(n == -1) {
-        for(i = 0; i < index; i++) {
+        for(i = 1; i <  index; i++) {
             if(b[i] == NULL) continue;
             readBook(*b[i]);
         }
