@@ -36,6 +36,7 @@ int main(void) {
             addBook(bp[index++]);
         } else if(menu == 3) {
             no = selectBookNum(bp, index);
+            getchar();
             if(no > 0) {
                 updateBook(bp[no]);
             } else {
