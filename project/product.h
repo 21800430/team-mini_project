@@ -1,10 +1,10 @@
 typedef struct {
     int no; //번호
-    char name[20]; //제목
+    char name[50]; //제목
     int cost; // 가격
-    char genre[20]; //장르
-    char writer[20]; //저자
-    char publisher[20]; //출판사
+    char genre[50]; //장르
+    char writer[50]; //저자
+    char publisher[50]; //출판사
     int many; //재고량
     float star; //별점
 }Book;

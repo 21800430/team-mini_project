@@ -100,7 +100,7 @@ int selectBookNum(Book *b[], int index) {
     
     printf("\n원하는 책의 번호를 입력해주세요.");
     scanf("%d", &num);
-    
+    getchar(); 
     if(b[num] == NULL) {
         printf("번호를 잘못 입력하셨습니다.\n");
     }
