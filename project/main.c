@@ -41,7 +41,8 @@ int main(void) {
                 printf("=> 취소되었습니다.\n");
             }
         } else if(menu == 4) {
-            deleteBook(bp, index);
+            no = selectBookNum(b, index);
+            deleteBook(bp, index, no);
         } else if(menu == 5) {
             saveFile(bp, index);
         } else if(menu == 6) {
