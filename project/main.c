@@ -20,7 +20,7 @@ int main(void) {
         printf("=> 파일이 존재하지 않습니다.\n");
     }
     
-    while(menu != 0) {
+    while(1) {
         menu = selectMenu();
         if(menu == 0) break;
         else if(menu == 1) {
