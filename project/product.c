@@ -80,7 +80,7 @@ int updateBook( Book *b){
 
 // 도서목록의 내용을 나열하는 함수
 void readBook(Book b){
-    printf("%d %s %s %s %s %d %d %.1f", b.no, b.name, b.writer, b.publisher, b.genre, b.cost, b.many, b.star);
+    printf("%d %s %s %s %s %d %d %.1f\", b.no, b.name, b.writer, b.publisher, b.genre, b.cost, b.many, b.star);
 }
 
 // 도서목록의 틀을 표시하는 함수
