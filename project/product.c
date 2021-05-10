@@ -36,13 +36,13 @@ int addBook( Book *b ){
     printf("책 장르는?: ");
     scanf("%[^\n]s",b->genre);
     getchar();
-    printf("책 가격은??: ");
+    printf("책 가격은?: ");
     scanf("%d",&b->cost);
     getchar();
     printf("책 재고량은?: ");
     scanf("%d",&b->many);
     getchar();
-    printf("책 별점는?: ");
+    printf("책 별점은?: ");
     scanf("%f",&b->star);
     getchar();
     printf("=> 등록되었습니다\n");
@@ -65,13 +65,13 @@ int updateBook( Book *b){
     printf("책 장르는?: ");
     scanf("%[^\n]s",b->genre);
     getchar();
-    printf("책 가격은??: ");
+    printf("책 가격은?: ");
     scanf("%d",&b->cost);
     getchar();
     printf("책 재고량은?: ");
     scanf("%d",&b->many);
     getchar();
-    printf("책 별점는?: ");
+    printf("책 별점은?: ");
     scanf("%f",&b->star);
     getchar();
     printf("=> 수정되었습니다\n");
@@ -80,7 +80,7 @@ int updateBook( Book *b){
 
 // 도서목록의 내용을 나열하는 함수
 void readBook(Book b){
-    printf("%d %s %s %s %s %d %d %.1f\", b.no, b.name, b.writer, b.publisher, b.genre, b.cost, b.many, b.star);
+    printf("%d %s %s %s %s %d %d %.1f\n", b.no, b.name, b.writer, b.publisher, b.genre, b.cost, b.many, b.star);
 }
 
 // 도서목록의 틀을 표시하는 함수
