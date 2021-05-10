@@ -115,8 +115,7 @@ int selectBookNum(Book *b[], int index) {
 }
 
 // 원하는 책의 정보를 삭제하는 함수
-int deleteBook(Book *b[], int index){
-    int no = selectBookNum(b, index);
+int deleteBook(Book *b[], int index, int no){
     int delOk;
     if(b[no] != NULL) {
         printf("삭제하시려면 1번을 눌러주세요. ");
