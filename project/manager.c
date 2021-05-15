@@ -26,6 +26,7 @@ void searchCost( Book *b[], int count ){
     int fail = 1, cost;
     scanf("%d",&cost);
     getchar();
+    printf("\n------------------\n");
     for( int i = 1 ; i < count ; i++){
         if(b[i]!=NULL){
             if(b[i]->cost <= cost){
