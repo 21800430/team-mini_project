@@ -22,7 +22,7 @@ void searchName( Book *b[], int count ){
 }
 //가격 검색
 void searchCost( Book *b[], int count ){
-    printf("검색할 가격(검색 가격 이하 책 출력): ");
+    printf("검색할 가격(이하 책 출력): ");
     int fail = 1, cost;
     scanf("%d",&cost);
     getchar();
@@ -94,7 +94,7 @@ void searchPublisher( Book *b[], int count ){
 }
 //별점 검색
 void searchStar( Book *b[], int count ){	
-    printf("검색할 별점(몇 점 이상): ");
+    printf("검색할 별점(이상 출력): ");
     int fail = 1;
     float star = 0;
     scanf("%f",&star);
@@ -112,7 +112,7 @@ void searchStar( Book *b[], int count ){
 }
 //재고량 검색
 void searchMany( Book *b[], int count ){
-    printf("검색할 재고량(몇 개 이상): ");
+    printf("검색할 재고량(이상 출력): ");
     int fail = 1, many;
     scanf("%d",&many);
     getchar();

@@ -46,7 +46,7 @@ int addBook( Book *b ){
     return 1;
 }
 //등록된 책을 업데이트하는 함수
-int updateBook( Book *b){
+int updateBook( Book *b ){
     printf("책 제목은?: ");
     scanf("%[^\n]s",b->name);
     getchar();
